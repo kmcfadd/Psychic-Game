@@ -1,0 +1,22 @@
+h1 { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 48px;
+    text-align: center;
+    border: 2px dashed black;
+    margin: auto 20%;
+    padding: 36px;
+}
+
+p { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#directions {
+    font-size: 24px;
+    text-align: center;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
