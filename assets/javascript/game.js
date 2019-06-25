@@ -27,7 +27,7 @@ document.onkeyup = function(event) {
 
     var userGuess = event.key;
 
-    console.log(computerChoice)
+// console.log(computerChoice) testing the computer choices
     
     // determines the outcome of the game
     if(userGuess === computerChoice){
