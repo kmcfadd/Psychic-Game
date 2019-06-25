@@ -25,27 +25,37 @@ document.onkeyup = function(event) {
 
     // determines the key pressed
 
-    var userGuess = event.key;
+    var userGuess = event.key.toLowerCase();
 
 // console.log(computerChoice) testing the computer choices
     
-    // determines the outcome of the game
+// only checks user guesses that are among the 26 letters of the alphabet
+if((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || 
+    (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || 
+        (userGuess === "m") || (userGuess === "n") ||  (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || 
+            (userGuess === "s") || (userGuess === "t") || (userGuess === "u") ||(userGuess === "v") || (userGuess === "w") || (userGuess === "x") ||
+                (userGuess === "y") || (userGuess === "z")) {
+
+// determines the outcome of the game, you win if your guess equals the computers choice
     if(userGuess === computerChoice){
         wins++;
         guesses = 9;
         guessed = [];
         alert("Winner! " + userGuess + " was correct! Keep going!")
         computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-    } else { guessed.push(userGuess);
-        guesses--;
 
-    } if(guesses === 0) { 
+// adds guesses to the array and decreases your guesses remaining on failed guesses
+    }  else { if (guessed.includes(userGuess) === false) {guessed.push(userGuess); guesses--;
+
+       }   else {   if (guessed.includes(userGuess) === true) alert("You already guessed " + userGuess + "! Try something new!")
+    }           
+// declares a loss when guesses remaining equal zero, resetting guesses and the computer choice
+    }; if(guesses === 0) { 
         guessed = [];
         guesses = 9;
         losses++
         alert("You lost! " + computerChoice + " was the answer. Keep trying!")
         computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-
     }
 
     // updates the game results as the user plays and makes guesses, wins and loses
@@ -53,5 +63,5 @@ document.onkeyup = function(event) {
     lossesText.textContent = "Losses: " + losses;
     guessesText.textContent = "Guesses remaining: " + guesses;
     guessedText.textContent = "Guessed so far: " + guessed;
-
-};
+}
+}
