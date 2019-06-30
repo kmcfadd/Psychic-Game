@@ -41,7 +41,7 @@ if((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGue
         wins++;
         guesses = 9;
         guessed = [];
-        alert("Winner! " + userGuess + " was correct! Keep going!")
+        alert("Winner! " + userGuess + " was correct! You're up to " + wins + " wins!")
         computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 // adds guesses to the array and decreases your guesses remaining on failed guesses
@@ -54,7 +54,7 @@ if((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGue
         guessed = [];
         guesses = 9;
         losses++
-        alert("You lost! " + computerChoice + " was the answer. Keep trying!")
+        alert("You lost! " + computerChoice + " was the answer. Maybe you're not so good at this...")
         computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
